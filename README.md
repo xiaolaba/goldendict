@@ -30,6 +30,18 @@ This code has been run and tested on Windows XP/Vista/7, Ubuntu Linux, Mac OS X.
          libqt5webkit5-dev libqt5svg5-dev libqt5x11extras5-dev qttools5-dev \
          qttools5-dev-tools qtmultimedia5-dev libqt5multimedia5-plugins
 
+
+### How to build, 2021-JAN-06, xiaolaba, ubuntun 20.04, done sucessfully,
+    git clone git://github.com/goldendict/goldendict.git
+    cd goldendict
+    /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+    sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
+    /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+    make
+
+
+
+
 ## How to build
 
 First, clone this repository, e.g.:
@@ -44,16 +56,7 @@ In case when `qmake-qt4` does not exist, try using `qmake` but make sure it is i
 On the other hand, if you want to use `qt5`, make sure that `qmake` is from Qt 5 installation. If not, you can try
 finding it at a path like `/usr/lib/x86_64-linux-gnu/qt5/bin/qmake`.
 Alternatively, you might want to load `goldendict.pro` file from within Qt Creator, especially on Windows.
-
-
-### 2021-JAN-06, xiaolaba, ubuntun 20.04, done sucessfully,
-    cd goldendict
-    /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
-    sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
-    /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
-    make
-    
-
+  
 Note: To compile with `libhunspell` older than 1.5 pass `"CONFIG+=old_hunspell"` to `qmake`.
 
 ### Building with Chinese conversion support
