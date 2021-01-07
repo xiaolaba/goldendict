@@ -45,6 +45,15 @@ On the other hand, if you want to use `qt5`, make sure that `qmake` is from Qt 5
 finding it at a path like `/usr/lib/x86_64-linux-gnu/qt5/bin/qmake`.
 Alternatively, you might want to load `goldendict.pro` file from within Qt Creator, especially on Windows.
 
+
+### 2021-JAN-06, xiaolaba, ubuntun 20.04, done sucessfully,
+    cd goldendict
+    /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+    sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
+    /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+    make
+    
+
 Note: To compile with `libhunspell` older than 1.5 pass `"CONFIG+=old_hunspell"` to `qmake`.
 
 ### Building with Chinese conversion support
@@ -119,8 +128,12 @@ Note: In Qt 5.6.0 and later the `Webkit` module was removed from official releas
 ## Installation
 
 Installation is an optional step since the built binary can be used as-is without installation. But you can properly install via:
-
     make install
+
+### 2021-JAN-06, xiaolaba, ubuntun 20.04 under win10, done sucessfully,
+    sudo apt update
+    sudo apt install tasksel
+    sudo make install
 
 <b>NB:</b> Don't do that on Windows!
 
